@@ -44,8 +44,8 @@ foreach($users as $user){
     <td><?=$user['id']?></td>
     <td><?=$user['name']?></td>
     <td><?=$user['age']?></td>
-   <td><a href="#">DELETE</a></td>
-   <td><a href="#">UPDATE</a></td>
+   <td><a href="delete.php?id=<?=$user['id']?>">DELETE</a></td>
+   <td><a href="update.php?id=<?=$user['id']?>">UPDATE</a></td>
 </tr>
   <?php  } ?>  
     </table>

@@ -11,8 +11,9 @@
             $ins = $this->db->prepare("insert into users value(null,?,?)");
            return $ins->execute([$name,$age]);
         }
-        public function delete(){
-            
+        public function delete($id){
+            $dle = $this->db->prepare("delete from users where id=?");
+           return $dle->execute([$id]);
         }
 
         }
