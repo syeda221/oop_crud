@@ -6,8 +6,8 @@ $table = new allfunc($database);
 if(isset($_GET['id'])){
      $id = $_GET['id'];
      $table->delete($id);
-     header("loacation:index.php?deleted=true");
-     
+     header("location:index.php?deleted=true");
+
 }
   
   
@@ -18,34 +18,7 @@ if(isset($_GET['id'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Data </title>
-    <style>
-         table{
-            width:700px;
-            border:1px solid;
-         }
-         tr,th{
-            border:1px solid;
-
-         }
-         button{
-            padding:15px 40px ;
-            border-radius:20px;
-         }
-         .delete{
-            position:absolute;
-            display:none;
-            top:0;
-            right:0;
-            font-size:1.2rem;
-            padding:20px;
-            background-color:pink;
-            border-radius:10px;
-            margin:10px;
-            border-bottom:7px solid red;
-            transition: ease-in;
-            transition-delay:0.5s;
-         }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="insert.php"><button>Insert Data</button></a>
@@ -73,8 +46,21 @@ foreach($users as $user){
     } 
     ?>  
     </table>
-    <div class="delete">this record is deleted</div>
-
+    <?php
+    if(isset($_GET['deleted'])){
+   
+        echo " <div class='delete'>this record is deleted</div>";
+    }
+    ?>
+    <script>
+        let msg = document.querySelector(".delete");
+        if(msg){
+            setTimeout(() => {
+                msg.style.display = 'none';
+                msg.style.transition = 'ease-out 0.5s';
+            }, 2000);
+        }
+    </script>
 <!-- <script>
     let dlt = document.querySelectorAll(".delete-link");
     let dltdiv = document.querySelector(".delete");

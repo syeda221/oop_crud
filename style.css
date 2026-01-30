@@ -1,0 +1,26 @@
+        table{
+            width:700px;
+            border:1px solid;
+         }
+         tr,th{
+            border:1px solid;
+
+         }
+         button{
+            padding:15px 40px ;
+            border-radius:20px;
+         }
+         .delete{
+            position:absolute;
+           
+            top:0;
+            right:0;
+            font-size:1.2rem;
+            padding:20px;
+            background-color:pink;
+            border-radius:10px;
+            margin:10px;
+            border-bottom:7px solid red;
+            transition: ease-in;
+            transition-delay:0.5s;
+         }
