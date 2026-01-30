@@ -13,10 +13,12 @@ $table = new allfunc($database);
             echo "data inserting issue";
         }
     }
-// function sanitize($data){
-//     $data = stripslashes($data);
-//     $data = htmlspecialchars($data,)
-// }
+function sanitize($data){
+    $data = trim($data)
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data,ENT_QUOTES);
+    return $data;
+}
 ?>
 
 
