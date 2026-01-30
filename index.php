@@ -3,10 +3,14 @@ include 'connect.php';
 include 'functions.php';
 $database = (new database)->connect();
 $table = new allfunc($database);
-//    $id = $_GET['id'];
-//    if($table->delete($id)){
-//         echo "<script></script"    
-//    }
+if(isset($_GET['id'])){
+     $id = $_GET['id'];
+     $table->delete($id);
+     header("loacation:index.php?deleted=true");
+     
+}
+  
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,14 +75,14 @@ foreach($users as $user){
     </table>
     <div class="delete">this record is deleted</div>
 
-<script>
+<!-- <script>
     let dlt = document.querySelectorAll(".delete-link");
-    let dltdiv = document.querySelectorAll(".delete");
+    let dltdiv = document.querySelector(".delete");
     dlt.forEach(function(e){
         e.addEventListener('click',function (){
             dltdiv.style.display = "flex";
         })
     })
-</script>
+</script> -->
 </body>
 </html>
