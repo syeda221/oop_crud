@@ -26,19 +26,33 @@ $table = new allfunc($database);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insert Form</title>
-    
+    <style>
+        .insert{
+            display:none:
+        }
+    </style>
 </head>
 <body>
     <div class="buttons">
-        <button>Select All data</button><button></button><button></button>
+        <a href="fetch.php"> <button>Select All data</button></a>
+        <a href="insert.php"><button class="insertbtn">Insert data</button></a>
+        <a href=""> <button>Fetch All Data</button></a>
+      
     </div>
-      <h1>Insert new user </h1><br>
+    <div class="insert"> <h1>Insert new user </h1><br>
     <form method="post">
         Name: <br>
         <input type="text" name="name" ><br>
         Email: <br>
         <input type="text" name="age" ><br>
         <input type="submit" value="Insert" name="submit">
-    </form>
+    </form></div>
+     <script>
+     let insert  = document.querySelector(".insert");
+     let insertbtn = document.querySelector(".insertbtn");
+     insertbtn.addEventListner('click',function ()=>{
+        insert.style.display = block;
+     } )
+     </script>
 </body>
 </html>
