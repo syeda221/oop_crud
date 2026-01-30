@@ -4,8 +4,8 @@ include 'functions.php';
 $database = (new database)->connect();
 $table = new allfunc($database);
     if(isset($_POST['submit'])){
-        $name = sanitize($_POST['name']);
-        $age = sanitize($_POST['age']);
+        $name = $_POST['name'];
+        $age = $_POST['age'];
         if($table->insert($name , $age)){
             echo "<script>alert('data inserted successfully')</script>";
         }
@@ -13,12 +13,10 @@ $table = new allfunc($database);
             echo "data inserting issue";
         }
     }
-function sanitize($data){
-    $data = trim($data)
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data,ENT_QUOTES);
-    return $data;
-}
+// function sanitize($data){
+//     $data = stripslashes($data);
+//     $data = htmlspecialchars($data,)
+// }
 ?>
 
 
@@ -32,7 +30,7 @@ function sanitize($data){
 </head>
 <body>
     <div class="buttons">
-        <button>Select All Data</button><button></button><button></button>
+        <button>Select All data</button><button></button><button></button>
     </div>
       <h1>Insert new user </h1><br>
     <form method="post">
