@@ -3,6 +3,10 @@ include 'connect.php';
 include 'functions.php';
 $database = (new database)->connect();
 $table = new allfunc($database);
+//    $id = $_GET['id'];
+//    if($table->delete($id)){
+//         echo "<script></script"    
+//    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +26,20 @@ $table = new allfunc($database);
          button{
             padding:15px 40px ;
             border-radius:20px;
+         }
+         .delete{
+            position:absolute;
+            display:none;
+            top:0;
+            right:0;
+            font-size:1.2rem;
+            padding:20px;
+            background-color:pink;
+            border-radius:10px;
+            margin:10px;
+            border-bottom:7px solid red;
+            transition: ease-in;
+            transition-delay:0.5s;
          }
     </style>
 </head>
@@ -44,11 +62,23 @@ foreach($users as $user){
     <td><?=$user['id']?></td>
     <td><?=$user['name']?></td>
     <td><?=$user['age']?></td>
-   <td><a href="delete.php?id=<?=$user['id']?>">DELETE</a></td>
+   <td><a class="delete-link" href="index.php?id=<?=$user['id']?>">DELETE</a></td>
    <td><a href="update.php?id=<?=$user['id']?>">UPDATE</a></td>
 </tr>
-  <?php  } ?>  
+  <?php
+    } 
+    ?>  
     </table>
+    <div class="delete">this record is deleted</div>
 
+<script>
+    let dlt = document.querySelectorAll(".delete-link");
+    let dltdiv = document.querySelectorAll(".delete");
+    dlt.forEach(function(e){
+        e.addEventListner('click',function (){
+            dltdiv.style.display = "flex";
+        })
+    })
+</script>
 </body>
 </html>

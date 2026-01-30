@@ -15,7 +15,10 @@
             $dle = $this->db->prepare("delete from users where id=?");
            return $dle->execute([$id]);
         }
+        public function update($id){
+            $up = $this->db->prepare("update users set name=?, age=? where id=");
 
+        }
         }
    
 ?>
