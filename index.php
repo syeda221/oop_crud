@@ -75,7 +75,7 @@ foreach($users as $user){
     let dlt = document.querySelectorAll(".delete-link");
     let dltdiv = document.querySelectorAll(".delete");
     dlt.forEach(function(e){
-        e.addEventListner('click',function (){
+        e.addEventListener('click',function (){
             dltdiv.style.display = "flex";
         })
     })
