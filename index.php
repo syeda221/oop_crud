@@ -19,6 +19,10 @@ $table = new allfunc($database);
             border:1px solid;
 
          }
+         button{
+            padding:15px 40px ;
+            border-radius:20px;
+         }
     </style>
 </head>
 <body>

@@ -11,6 +11,10 @@
             $ins = $this->db->prepare("insert into users value(null,?,?)");
            return $ins->execute([$name,$age]);
         }
-            }
+        public function delete(){
+            
+        }
+
+        }
    
 ?>
