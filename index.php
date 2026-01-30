@@ -3,44 +3,38 @@ include 'connect.php';
 include 'functions.php';
 $database = (new database)->connect();
 $table = new allfunc($database);
-    if(isset($_POST['submit'])){
-        $name = $_POST['name'];
-        $age = $_POST['age'];
-        if($table->insert($name , $age)){
-            echo "<script>alert('data inserted successfully')</script>";
-        }
-        else {
-            echo "data inserting issue";
-        }
-    }
-// function sanitize($data){
-//     $data = stripslashes($data);
-//     $data = htmlspecialchars($data,)
-// }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert Form</title>
+    <title>All Data </title>
     
 </head>
 <body>
-    <div class="buttons">
-        <a href="insert.php"><button>Insert data</button></a>
+    <h1>All Data</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+        </tr>
+<?php 
+$users = $table->getall();
+foreach($users as $user){
+?>
+<tr>
+    <td><?=$user['id']?></td>
+    <td><?=$user['NAME']?></td>
+    <td><?=$user['age']?></td>
+    <td>DELETE</td>
+    <td>UPDATE</td>
+</tr>
+  <?php} ?>  
+    </table>
 
-    </div>
-    <div class="insert"> <h1>Insert new user </h1><br>
-    <form method="post">
-        Name: <br>
-        <input type="text" name="name" ><br>
-        Email: <br>
-        <input type="text" name="age" ><br>
-        <input type="submit" value="Insert" name="submit">
-    </form></div>
-     
 </body>
 </html>
