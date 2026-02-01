@@ -25,46 +25,25 @@
         </thead>
 
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Ali</td>
-                <td>22</td>
-                <td>
-                    <button class="btn edit">Edit</button>
-                    <button class="btn delete">Delete</button>
-                </td>
-            </tr>
+          
 
-            <tr>
-                <td>2</td>
-                <td>Sara</td>
-                <td>20</td>
-                <td>
-                    <button class="btn edit">Edit</button>
-                    <button class="btn delete">Delete</button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>Ahmed</td>
-                <td>25</td>
-                <td>
-                    <button class="btn edit">Edit</button>
-                    <button class="btn delete">Delete</button>
-                </td>
-            </tr>
+          
         </tbody>
     </table>
 </div>
 <script>
-    $(document).ready(function (){
+    $(document).ready(function(){
         function fetchData(){
-            $.ajax{
-                URL:"fetch.php"
-            }
+            $.ajax({
+                url: "fetch.php",
+                type: "POST",
+                success: function(data){
+                    $("tbody").html(data);
+                }
+            });
         }
-    })
+        fetchData();
+    });
 </script>
 </body>
 </html>
