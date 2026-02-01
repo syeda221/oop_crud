@@ -13,12 +13,12 @@ foreach($all as $a){
             
             
             <tr>
-                <td><?=$a['id']?></td>
+                <td ><?=$a['id']?></td>
                 <td><?=$a['name']?></td>
                 <td><?=$a['age']?></td>
                 <td>
                     <button class="btn edit">Edit</button>
-                    <button class="btn delete">Delete</button>
+                    <button class="btn delete" data-id="<?=$a['id']?>">Delete</button>
                 </td>
             </tr>
 <?php } ?>

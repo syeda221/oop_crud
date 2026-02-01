@@ -40,9 +40,22 @@
                 success: function(data){
                     $("tbody").html(data);
                 }
-            });
+                });
+            }
+         fetchData();
+        function delete(){
+            $.ajax({
+                url: "delete.php",
+                type: "POST",
+                data: {"id": $(this).data("id")}
+                success: function(data){
+                    alert(data);
+                    fetchData();
+
+                }
+            }):
         }
-        fetchData();
+         $(".delete").on('click', delete())
     });
 </script>
 </body>
