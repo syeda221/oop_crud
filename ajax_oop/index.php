@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Simple CRUD Table</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -56,6 +57,14 @@
         </tbody>
     </table>
 </div>
-
+<script>
+    $(document).ready(function (){
+        function fetchData(){
+            $.ajax{
+                URL:"fetch.php"
+            }
+        }
+    })
+</script>
 </body>
 </html>
