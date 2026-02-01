@@ -432,7 +432,7 @@ $(document).ready(function(){
 </div>
 <script>
     $(document).ready(function (){
-
+        
     })
 </script>
 </body>
