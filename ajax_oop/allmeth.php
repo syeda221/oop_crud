@@ -10,9 +10,9 @@ class crud{
         return $get;
     }
     public function delete($id){
-         $dlt =$this->db->prepare("DELETE * FROM users where id =?");
+        $dlt = $this->db->prepare("DELETE FROM users WHERE id = ?");
         $dlt->execute([$id]);
-        return $dlt;
+        return $dlt->rowCount();
     }
 }
 ?>

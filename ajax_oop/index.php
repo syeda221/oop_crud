@@ -43,19 +43,22 @@
                 });
             }
          fetchData();
-        function delete(){
+        function deletefun(e){
+            e.preventDefault();
+            var id = $(this).data("id");
+            if(!id) return;
             $.ajax({
                 url: "delete.php",
                 type: "POST",
-                data: {"id": $(this).data("id")}
+                data: {"id": id},
                 success: function(data){
                     alert(data);
                     fetchData();
 
                 }
-            }):
+            });
         }
-         $(".delete").on('click', delete())
+        $(document).on('click', '.delete', deletefun);
     });
 </script>
 </body>
