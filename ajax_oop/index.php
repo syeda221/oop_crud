@@ -34,7 +34,7 @@
         <h5>Add Data</h5>
         <input type="text" name="name"><br><br>
         <input type="number" name="name"><br><br>
-        <input type="submit" value="add">
+        <input type="submit" value="Add" class="add">
     </form>
 </div>
 <script>
@@ -52,6 +52,20 @@
         $(".add").on('click', function(){
             $("form").css("display","block")
         })
+        function insert(e){
+            e.preventDefault();
+            $.ajax{
+                url: "insert.php",
+                type: "POST",
+                data: {"name":}
+                success: function(data){
+                  alert(data);
+                  $("form").css("display","none")
+                  
+                }
+            }
+        }
+       $(document).on('click', ".add",)
         function deletefun(e){
             e.preventDefault();
             var id = $(this).data("id");
