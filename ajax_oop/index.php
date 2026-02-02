@@ -30,11 +30,11 @@
           
         </tbody>
     </table>
-    <form class="add-form" method="post">
+    <form class="add-form" id="insert-data" method="post">
         <h5>Add Data</h5>
-        <input type="text" name="name"><br><br>
-        <input type="number" name="name"><br><br>
-        <input type="submit" value="Add" class="add">
+        <input type="text" name="name" id="name"><br><br>
+        <input type="number" name="age" id="age"><br><br>
+        <input type="submit" value="Add" class="add-btn">
     </form>
 </div>
 <script>
@@ -49,23 +49,25 @@
                 });
             }
          fetchData();
-        $(".add").on('click', function(){
-            $("form").css("display","block")
-        })
+        $(".btn.add").on('click', function(){
+            $(".add-form").show();
+        });
         function insert(e){
             e.preventDefault();
-            $.ajax{
+            let name = $("#name").val();
+            let age = $("#age").val();
+            $.ajax({
                 url: "insert.php",
                 type: "POST",
-                data: {"name":}
+                data: {"name":name,"age":age},
                 success: function(data){
                   alert(data);
-                  $("form").css("display","none")
-                  
+                  $("form").hide();
+                  fetchData();
                 }
-            }
+            });
         }
-       $(document).on('click', ".add",)
+       $(".add-form").on('submit', insert);
         function deletefun(e){
             e.preventDefault();
             var id = $(this).data("id");
@@ -76,6 +78,7 @@
                 data: {"id": id},
                 success: function(data){
                     alert(data);
+                    $("#insert-data").trigger("reset");
                     fetchData();
 
                 }
