@@ -31,6 +31,7 @@
         </tbody>
     </table>
     <form class="add-form" method="post">
+        <h5>Add Data</h5>
         <input type="text" name="name"><br><br>
         <input type="number" name="name"><br><br>
         <input type="submit" value="add">

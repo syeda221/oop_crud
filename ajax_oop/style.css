@@ -59,3 +59,16 @@ table th {
 .delete {
     background: #dc3545;
 }
+.add-form{
+    background-color: grey;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+    position: absolute;
+    top: 150px;
+    left:350px;
+}
+.add-form input{
+    width: 400px;
+    height: 2rem;
+}
