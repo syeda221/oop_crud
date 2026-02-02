@@ -49,8 +49,8 @@
                 });
             }
          fetchData();
-        $("add").on('click', function(){
-            $("")
+        $(".add").on('click', function(){
+            $("form").css("display","block")
         })
         function deletefun(e){
             e.preventDefault();

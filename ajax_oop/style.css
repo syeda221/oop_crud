@@ -67,6 +67,7 @@ table th {
     position: absolute;
     top: 150px;
     left:350px;
+    display: none;
 }
 .add-form input{
     width: 400px;
