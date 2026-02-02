@@ -30,6 +30,11 @@
           
         </tbody>
     </table>
+    <form class="add-form" method="post">
+        <input type="text" name="name"><br><br>
+        <input type="number" name="name"><br><br>
+        <input type="submit" value="add">
+    </form>
 </div>
 <script>
     $(document).ready(function(){
@@ -43,6 +48,9 @@
                 });
             }
          fetchData();
+        $("add").on('click', function(){
+            $("")
+        })
         function deletefun(e){
             e.preventDefault();
             var id = $(this).data("id");
@@ -58,7 +66,7 @@
                 }
             });
         }
-        $(document).on('click', '.delete', deletefun);
+        $(document).on('click','.delete', deletefun);
     });
 </script>
 </body>
