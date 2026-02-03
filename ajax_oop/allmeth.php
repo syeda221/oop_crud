@@ -18,6 +18,10 @@ class crud{
         $dlt->execute([$id]);
         return $dlt->rowCount();
     }
-    public function update($id,$name,$age)
+    public function update($id,$name,$age){
+        $up= $this->db->prepare("update users set name=?,age=? where id=?");
+        $up->execute([$name,$age,$id]);
+        return $up;
+    }
 }
 ?>
