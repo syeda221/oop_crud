@@ -11,8 +11,7 @@ class crud{
     }
     public function insert($name,$age){
         $ins  = $this->db->prepare("INSERT INTO users (`name`,`age`) VALUES (?, ?)");
-        $ins->execute([$name,$age]);
-        return $ins->rowCount();
+        return $ins->execute([$name,$age]);
     }
     public function delete($id){
         $dlt = $this->db->prepare("DELETE FROM users WHERE id = ?");

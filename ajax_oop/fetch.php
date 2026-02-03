@@ -5,6 +5,9 @@ $database = (new database)->db();
 $table = new crud($database);
 $all = $table->getAll();
 foreach($all as $a){
+$id = $a['id'];
+$name = $a['name'];
+$age =$a['age'];
 
 
 ?>
@@ -13,9 +16,9 @@ foreach($all as $a){
             
             
             <tr>
-                <td ><?=$a['id']?></td>
-                <td><?=$a['name']?></td>
-                <td><?=$a['age']?></td>
+                <td ><?=htmlspecialchars($id, ENT_QUOTES, 'UTF-8')?></td>
+                <td><?=htmlspecialchars($name, ENT_QUOTES, 'UTF-8')?></td>
+                <td><?=htmlspecialchars($age, ENT_QUOTES, 'UTF-8')?></td>
                 <td>
                     <button class="btn edit">Edit</button>
                     <button class="btn delete" data-id="<?=$a['id']?>">Delete</button>
