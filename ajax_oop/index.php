@@ -111,9 +111,8 @@
             let name = $(this).data('name');
             let age = $(this).data('age');
 
-            $("#edit-name").val(id);
             $("#edit-name").val(name);
-            $("#edit-btn").val(age);
+            $("#edit-age").val(age);
             $("#update-data").show();
         })
          $(document).on('click','.cross',function(){
