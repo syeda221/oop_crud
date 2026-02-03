@@ -21,7 +21,12 @@ class crud{
     public function update($id,$name,$age){
         $up= $this->db->prepare("update users set name=?,age=? where id=?");
         $up->execute([$name,$age,$id]);
-        return $up;
+        return $up; 
+    }
+    public function update_it($id){
+        $upid=$this->db->prepare("select * from users where id=?");
+        $upid->execute([$id]);
+        return $upid;
     }
 }
 ?>
