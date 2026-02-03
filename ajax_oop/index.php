@@ -107,6 +107,11 @@
         $(document).on('click','.delete', deletefun);
 
         $(document).on('click','.edit',function(){
+            let id = $(this).data('id');
+            let name = $(this).data('name');
+            let age = $(this).data('age');
+
+            $("#edit-name").val(id)
             $("#update-data").show();
         })
          $(document).on('click','.cross',function(){
