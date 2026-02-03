@@ -40,8 +40,8 @@
     </form>
      <form class="up-form" id="update-data" method="post">
         <h5>Add Data</h5>
-        <input type="text" name="name" id="edit-name"><br><br>
-        <input type="number" name="age" id="edit-age"><br><br>
+        <input type="text" name="name" data-name="edit-name" id="edit-name"><br><br>
+        <input type="number" name="age" data-age="edit-age" id="edit-age"><br><br>
         <input type="submit" value="edit" class="edit-btn">
         <h1 class="cross">X</h1>
     </form>
