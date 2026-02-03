@@ -18,5 +18,6 @@ class crud{
         $dlt->execute([$id]);
         return $dlt->rowCount();
     }
+    public function update($id,$name,$age)
 }
 ?>

@@ -35,10 +35,20 @@
         <input type="text" name="name" id="name"><br><br>
         <input type="number" name="age" id="age"><br><br>
         <input type="submit" value="Add" class="add-btn">
+        <h1 class="cross">X</h1>
+
+    </form>
+     <form class="up-form" id="update-data" method="post">
+        <h5>Add Data</h5>
+        <input type="text" name="name" id="name"><br><br>
+        <input type="number" name="age" id="age"><br><br>
+        <input type="submit" value="edit" class="edit-btn">
+        <h1 class="cross">X</h1>
     </form>
 </div>
 <script>
     $(document).ready(function(){
+        //fetch function 
         function fetchData(){
             $.ajax({
                 url: "fetch.php",
@@ -49,9 +59,15 @@
                 });
             }
          fetchData();
+         //form show
         $(".btn.add").on('click', function(){
-            $(".add-form").show();
+            $("#insert-data").show();
+        });  
+        $(".cross").on('click', function(){
+            $("#insert-data").hide();
         });
+
+        //insert function
         function insert(e){
             e.preventDefault();
             let name = $("#name").val();
@@ -62,12 +78,16 @@
                 data: {"name":name,"age":age},
                 success: function(data){
                   alert(data);
-                  $("form").hide();
+                  $("#insert-data")[0].reset();
+                  $("#insert-data").hide();
                   fetchData();
                 }
             });
         }
+        //insert funxtio  call
        $(".add-form").on('submit', insert);
+
+       //dlete function
         function deletefun(e){
             e.preventDefault();
             var id = $(this).data("id");
@@ -78,13 +98,22 @@
                 data: {"id": id},
                 success: function(data){
                     alert(data);
-                    $("#insert-data").trigger("reset");
                     fetchData();
 
                 }
             });
         }
+        //delete function call
         $(document).on('click','.delete', deletefun);
+
+        $(document).on('click','.edit',function(){
+            $("#update-data").show();
+        })
+         $(document).on('click','.cross',function(){
+            $("#update-data").hide();
+        })
+        //update function 
+        
     });
 </script>
 </body>
