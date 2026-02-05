@@ -39,7 +39,9 @@
 
     </form>
      <form class="up-form" id="update-data" method="post">
-        <h5>Add Data</h5>
+        <h5>edit Data</h5>
+        <input type="hidden" id="edit-id">
+
         <input type="text" name="name" data-name="edit-name" id="edit-name"><br><br>
         <input type="number" name="age" data-age="edit-age" id="edit-age"><br><br>
         <input type="submit" value="edit" data-id="sel-id" class="edit-btn">
@@ -113,6 +115,7 @@
 
             $("#edit-name").val(name);
             $("#edit-age").val(age);
+            $("#edit-id").val(id);
             $("#update-data").show();
         })
          $(document).on('click','.cross',function(){
