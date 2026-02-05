@@ -109,9 +109,9 @@
         $(document).on('click','.delete', deletefun);
 
         $(document).on('click','.edit',function(){
-            let id = $(this).data('id');
-            let name = $(this).data('name');
-            let age = $(this).data('age');
+            let id = $(this).data('sel-id');
+            let name = $(this).data('edit-name');
+            let age = $(this).data('edit-age');
 
             $("#edit-name").val(name);
             $("#edit-age").val(age);
