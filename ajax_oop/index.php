@@ -42,9 +42,9 @@
         <h5>edit Data</h5>
         <input type="hidden" id="edit-id">
 
-        <input type="text" name="name" data-name="edit-name" id="edit-name"><br><br>
-        <input type="number" name="age" data-age="edit-age" id="edit-age"><br><br>
-        <input type="submit" value="edit" data-id="sel-id" class="edit-btn">
+        <input type="text" name="name"  id="edit-name"><br><br>
+        <input type="number" name="age"  id="edit-age"><br><br>
+        <input type="submit" value="edit"  class="edit-btn">
         <h1 class="cross">X</h1>
     </form>
 </div>
@@ -92,7 +92,7 @@
        //dlete function
         function deletefun(e){
             e.preventDefault();
-            var id = $(this).data("id");
+            var id = $(this).data("did");
             if(!id) return;
             $.ajax({
                 url: "delete.php",
@@ -110,8 +110,7 @@
 
         $(document).on('click','.edit',function(){
             let id = $(this).data('sel-id');
-            let name = $(this).data('edit-name');
-            let age = $(this).data('edit-age');
+           
 
             $("#edit-name").val(name);
             $("#edit-age").val(age);
