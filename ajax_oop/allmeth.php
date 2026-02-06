@@ -23,7 +23,7 @@ class crud{
      public function edit_fetch($id){
         $fetch_id = $this->db->prepare("select * FROM users WHERE id = ?");
         $fetch_id->execute([$id]);
-        return $fetch_id->rowCount();
+        return $fetch_id;
     }
      public function edit($id,$name,$email){
         $dlt = $this->db->prepare("update users set name =? , email =? where id =?");
