@@ -105,14 +105,14 @@
         $(document).on('click','.edit',function(){
             let id = $(this).data('eid');
             $("#update-data").show();
-            $.ajax{
-                url: edit.php,
+            $.ajax({
+                url: "edit.php",
                 type: "POST",
                 data: {"id":id},
                 success: function(data){
                 $("#update-data").html(data)
                 }
-            }
+            });
         })
          $(document).on('click','.cross',function(){
             $("#update-data").hide();
