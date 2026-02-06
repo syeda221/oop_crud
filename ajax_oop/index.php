@@ -39,13 +39,7 @@
 
     </form>
      <form class="up-form" id="update-data" method="post">
-        <h5>edit Data</h5>
-        <input type="hidden" id="edit-id">
-
-        <input type="text" name="name"  id="edit-name"><br><br>
-        <input type="number" name="age"  id="edit-age"><br><br>
-        <input type="submit" value="edit"  class="edit-btn">
-        <h1 class="cross">X</h1>
+       
     </form>
 </div>
 <script>
@@ -115,8 +109,8 @@
                 url: edit.php,
                 type: "POST",
                 data: {"id":id},
-                success: function(){
-                    
+                success: function(data){
+                $("#update-data").html(data)
                 }
             }
         })

@@ -25,5 +25,10 @@ class crud{
         $fetch_id->execute([$id]);
         return $fetch_id->rowCount();
     }
+     public function edit($id,$name,$email){
+        $dlt = $this->db->prepare("update users set name =? , email =? where id =?");
+        $dlt->execute([$name, $email,$id]);
+        return $dlt->rowCount();
+    }
 }
 ?>
