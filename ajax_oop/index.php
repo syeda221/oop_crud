@@ -109,13 +109,16 @@
         $(document).on('click','.delete', deletefun);
 
         $(document).on('click','.edit',function(){
-            let id = $(this).data('sel-id');
-           
-
-            $("#edit-name").val(name);
-            $("#edit-age").val(age);
-            $("#edit-id").val(id);
+            let id = $(this).data('eid');
             $("#update-data").show();
+            $.ajax{
+                url: edit.php,
+                type: "POST",
+                data: {"id":id},
+                success: function(){
+                    
+                }
+            }
         })
          $(document).on('click','.cross',function(){
             $("#update-data").hide();
