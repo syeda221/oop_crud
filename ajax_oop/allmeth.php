@@ -19,5 +19,11 @@ class crud{
         $dlt->execute([$id]);
         return $dlt->rowCount();
     }
+
+     public function edit_fetch($id){
+        $fetch_id = $this->db->prepare("select * FROM users WHERE id = ?");
+        $fetch_id->execute([$id]);
+        return $fetch_id->rowCount();
+    }
 }
 ?>
