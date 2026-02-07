@@ -7,6 +7,11 @@ $table = new crud($database);
 $id=$_POST["id"];
 
 $fetch_id = $table->edit_fetch($id)->fetch(PDO::FETCH_ASSOC);
+if(isset($_POST['update'])){
+     $name = $_POST['name'];
+     $age = $_POST['age'];
+     echo $name . "<br>". $age;
+}
 ?>
  <h3>edit Data</h3>
  <br>
@@ -19,7 +24,7 @@ $fetch_id = $table->edit_fetch($id)->fetch(PDO::FETCH_ASSOC);
    <h6>Age</h6>
     
         <input type="number" name="age" value="<?=$fetch_id['age']?>" id="edit-age"><br><br>
-        <input type="submit" value="edit"  class="edit-btn">
+        <input type="submit" value="edit" name="update" class="edit-btn">
         <h1 class="cross">X</h1>
 <?php
 
