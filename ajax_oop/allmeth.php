@@ -26,9 +26,9 @@ class crud{
         return $fetch_id;
     }
      public function edit($id,$name,$email){
-        $dlt = $this->db->prepare("update users set name =? , email =? where id =?");
-        $dlt->execute([$name, $email,$id]);
-        return $dlt->rowCount();
+        $edi = $this->db->prepare("update users set name =? , email =? where id =?");
+        $edi->execute([$name, $email,$id]);
+        return $edi
     }
 }
 ?>
