@@ -38,9 +38,9 @@
         <h1 class="cross">X</h1>
 
     </form>
-    <div id="update-div">
-    
-    </div>
+     <form class="up-form" id="update-data" method="post">
+       
+    </form>
 </div>
 <script>
     $(document).ready(function(){
@@ -104,18 +104,18 @@
 
         $(document).on('click','.edit',function(){
             let id = $(this).data('eid');
-            $("#update-div").show();
+            $("#update-data").show();
             $.ajax({
                 url: "edit.php",
                 type: "POST",
                 data: {"id":id},
                 success: function(data){
-                $("#update-div").html(data)
+                $("#update-data").html(data)
                 }
             });
         })
          $(document).on('click','.cross',function(){
-            $("#update-div").hide();
+            $("#update-data").hide();
         })
         //update function 
         

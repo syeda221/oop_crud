@@ -13,9 +13,6 @@ $fetch_id = $table->edit_fetch($id)->fetch(PDO::FETCH_ASSOC);
 <?php
 
 ?>
- <form class="up-form" id="update-data" method="post">
-       
-    
 <h6>Name</h6> 
      <input type="text" name="name" value="<?=$fetch_id['name']?>" id="edit-name">
      <br>
@@ -24,7 +21,6 @@ $fetch_id = $table->edit_fetch($id)->fetch(PDO::FETCH_ASSOC);
         <input type="number" name="age" value="<?=$fetch_id['age']?>" id="edit-age"><br><br>
         <input type="submit" value="edit"  class="edit-btn">
         <h1 class="cross">X</h1>
-        </form>
 <?php
 
 ?> 
