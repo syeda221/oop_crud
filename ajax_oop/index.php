@@ -30,7 +30,7 @@
           
         </tbody>
     </table>
-    <form class="add-form" id="insert-data" method="post">
+    <form class="add-form" id="insert-data" method="get">
         <h5>Add Data</h5>
         <input type="text" name="name" id="name"><br><br>
         <input type="number" name="age" id="age"><br><br>
@@ -38,7 +38,7 @@
         <h1 class="cross">X</h1>
 
     </form>
-     <form class="up-form" id="update-data" method="post">
+     <form class="up-form" id="update-data" method="get">
        
     </form>
 </div>
