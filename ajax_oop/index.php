@@ -38,9 +38,11 @@
         <h1 class="cross">X</h1>
 
     </form>
+    <div id="update-div">
      <form class="up-form" id="update-data" method="post">
        
     </form>
+    </div>
 </div>
 <script>
     $(document).ready(function(){
@@ -110,7 +112,7 @@
                 type: "POST",
                 data: {"id":id},
                 success: function(data){
-                $("#update-data").html(data)
+                $("#update-div").html(data)
                 }
             });
         })

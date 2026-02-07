@@ -9,7 +9,6 @@ $id = $a['id'];
 $name = $a['name'];
 $age =$a['age'];
 
-
 ?>
             
             
