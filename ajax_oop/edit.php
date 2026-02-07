@@ -10,7 +10,7 @@ $fetch_id = $table->edit_fetch($id)->fetch(PDO::FETCH_ASSOC);
 if(isset($_POST['update'])){
      $name = $_POST['name'];
      $age = $_POST['age'];
-     echo"<script> '{$name} . <br>. {$age}'</script>";
+     $table->
 }
 ?>
  <h3>edit Data</h3>
