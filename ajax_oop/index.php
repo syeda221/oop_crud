@@ -38,9 +38,9 @@
         <h1 class="cross">X</h1>
 
     </form>
-     <form class="up-form" id="update-data" method="post">
+     <div class="up-form" id="update-data" method="post">
        
-    </form>
+</div>
 </div>
 <script>
     $(document).ready(function(){

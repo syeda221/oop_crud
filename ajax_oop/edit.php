@@ -13,6 +13,7 @@ if(isset($_POST['update'])){
      echo "<script>alert('cmnmcnmx')</script>";
 }
 ?>
+<form method="post">
  <h3>edit Data</h3>
  <br>
 <?php
@@ -26,6 +27,7 @@ if(isset($_POST['update'])){
         <input type="number" name="age" value="<?=$fetch_id['age']?>" id="edit-age"><br><br>
         <input type="submit" value="update" name="update" class="edit-btn">
         <h1 class="cross">X</h1>
+        </form>
 <?php
 
 ?> 
