@@ -113,6 +113,7 @@
                 $("#update-data").html(data);
                 // show the injected form (the CSS hides forms by default)
                 $("#update-data form").show();
+                    fetchData();
                 }
             });
         })
