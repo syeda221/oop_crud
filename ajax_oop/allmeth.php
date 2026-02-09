@@ -23,12 +23,12 @@ class crud{
      public function edit_fetch($id){
         $fetch_id = $this->db->prepare("select * FROM users WHERE id = ?");
         $fetch_id->execute([$id]);
-        return $fetch_id;
+        return $fetch_id->fetch();
     }
      public function edit($id,$name,$email){
         $edi = $this->db->prepare("update users set name =? , email =? where id =?");
         $edi->execute([$name, $email,$id]);
-        return $edi
+        return $edi;
     }
 }
 ?>

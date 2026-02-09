@@ -6,11 +6,11 @@ $database =(new database())->db();
 $table = new crud($database);
 $id=$_POST["id"];
 
-$fetch_id = $table->edit_fetch($id)->fetch(PDO::FETCH_ASSOC);
+$fetch_id = $table->edit_fetch($id);
 if(isset($_POST['update'])){
      $name = $_POST['name'];
      $age = $_POST['age'];
-     $table->
+     
 }
 ?>
  <h3>edit Data</h3>
