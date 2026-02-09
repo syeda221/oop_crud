@@ -117,7 +117,19 @@
             });
         })
         $(document).on('submit','#edit-form',function(e){
-            e.preventDefault()
+            e.preventDefault();
+            $.ajax({
+                url: "update.php",
+                type: "POST", 
+                data: $(this).serialize(),
+                success: function(data){
+                    alert(data);
+                $("#update-data form").hide();
+
+                    fetchData();
+
+                }
+            })
         })
          $(document).on('click','.cross',function(){
             $("#update-data").hide();
