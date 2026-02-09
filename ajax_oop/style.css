@@ -62,7 +62,7 @@ table th {
 /* Only hide the add form and any form injected into #update-data by default */
 #insert-data,
 #update-data form{
-    background-color: grey;
+    background-color: rgb(224, 224, 224);
     margin: 0 auto;
     padding: 40px;
     border-radius: 20px;
@@ -79,7 +79,8 @@ table th {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: white;
+    background-color: red;
+    color: white;
     border-radius: 50%;
     width: 35px;
     height: 35px;
