@@ -7,14 +7,7 @@ $table = new crud($database);
 $id=$_POST["id"];
 
 $fetch_id = $table->edit_fetch($id);
-if(isset($_POST['update'])){
-     $id = $_POST['id'];
-      $name = $_POST['name'];
-      $age = $_POST['age'];
-      // perform update
-      $table->edit($id, $name, $age);
-      echo "<script>alert('Updated successfully');</script>";
-}
+
 ?>
 <form method="post" id="edit-form">
  <h3>edit Data</h3>
