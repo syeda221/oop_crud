@@ -10,7 +10,7 @@ $fetch_id = $table->edit_fetch($id);
 if(isset($_POST['update'])){
      $name = $_POST['name'];
      $age = $_POST['age'];
-     
+     echo "<script>alert('cmnmcnmx')</script>";
 }
 ?>
  <h3>edit Data</h3>
