@@ -16,7 +16,7 @@ if(isset($_POST['update'])){
       echo "<script>alert('Updated successfully');</script>";
 }
 ?>
-<form method="post">
+<form method="post" id="edit-form">
  <h3>edit Data</h3>
  <br>
 <?php

@@ -116,7 +116,9 @@
                 }
             });
         })
-
+        $(document).on('submit','#edit-form',function(e){
+            e.preventDefault()
+        })
          $(document).on('click','.cross',function(){
             $("#update-data").hide();
         })
