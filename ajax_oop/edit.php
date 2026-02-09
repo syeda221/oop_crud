@@ -8,6 +8,7 @@ $id=$_POST["id"];
 
 $fetch_id = $table->edit_fetch($id);
 if(isset($_POST['update'])){
+     $id = $_POST['id'];
       $name = $_POST['name'];
       $age = $_POST['age'];
       // perform update
