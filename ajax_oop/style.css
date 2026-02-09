@@ -59,7 +59,9 @@ table th {
 .delete {
     background: #dc3545;
 }
-form{
+/* Only hide the add form and any form injected into #update-data by default */
+#insert-data,
+#update-data form{
     background-color: grey;
     margin: 0 auto;
     padding: 40px;
