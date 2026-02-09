@@ -8,9 +8,11 @@ $id=$_POST["id"];
 
 $fetch_id = $table->edit_fetch($id);
 if(isset($_POST['update'])){
-     $name = $_POST['name'];
-     $age = $_POST['age'];
-     echo "<script>alert('cmnmcnmx')</script>";
+      $name = $_POST['name'];
+      $age = $_POST['age'];
+      // perform update
+      $table->edit($id, $name, $age);
+      echo "<script>alert('Updated successfully');</script>";
 }
 ?>
 <form method="post">
@@ -20,6 +22,7 @@ if(isset($_POST['update'])){
 
 ?>
 <h6>Name</h6> 
+     <input type="hidden" name="id" value="<?=$id?>">
      <input type="text" name="name" value="<?=$fetch_id['name']?>" id="edit-name">
      <br>
    <h6>Age</h6>
