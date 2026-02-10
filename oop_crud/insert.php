@@ -7,7 +7,8 @@ if(isset($_POST['add']))
 {
     $name = $_POST['name'];
     $age = $_POST['age'];
-    $image = $_POST['name']['name'];
+    $image = $_POST['image']['name'];
+    $image = 
     $name = $_POST['name'];
 }
 ?>
