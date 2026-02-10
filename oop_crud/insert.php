@@ -10,7 +10,8 @@ if(isset($_POST['add']))
     $image = $_POST['image']['name'];
     $tmp = $_POST['image']['tmp_name'] ;
     move_uploaded_file($tmp , "/pics/".$image);
-    $name = $_POST['password'];
+    $password = $_POST['password'];
+    $table->insert($name,$age,$image,$password);
 }
 ?>
 
