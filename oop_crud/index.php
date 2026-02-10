@@ -1,5 +1,5 @@
 <?php
-include '../ajax_oop/allmeth.php';
+include 'all.php';
 include '../ajax_oop/connect.php';
 $database = (new database)->db();
 $table = new crud($database);
