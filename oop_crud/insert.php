@@ -8,8 +8,9 @@ if(isset($_POST['add']))
     $name = $_POST['name'];
     $age = $_POST['age'];
     $image = $_POST['image']['name'];
-    $image = 
-    $name = $_POST['name'];
+    $tmp = $_POST['image']['tmp_name'] ;
+    move_uploaded_file($tmp , "/pics/".$image);
+    $name = $_POST['password'];
 }
 ?>
 

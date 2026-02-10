@@ -9,9 +9,10 @@ class crud{
         $get->execute();
         return $get;
     }
-    public function insert($name,$age){
-        $ins  = $this->db->prepare("INSERT INTO users (`name`,`age`) VALUES (?, ?)");
-        $ins->execute([$name,$age]);
+    public function insert($name,$age,$image,$password){
+        $password = password_hash($password ,PASSWORD_DEFAULT);
+        $ins  = $this->db->prepare("INSERT INTO users (`name`,`age`,`image`, `password`) VALUES (?, ?,?,?)");
+        $ins->execute([$name,$age,$image,$passwords]);
         return $ins->rowCount();
     }
     public function delete($id){
