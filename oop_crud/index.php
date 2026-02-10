@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple CRUD Table</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../ajax_oop/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
