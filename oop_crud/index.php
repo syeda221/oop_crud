@@ -2,7 +2,7 @@
 include '../ajax_oop/allmeth.php';
 include '../ajax_oop/connect.php';
 $database = (new database)->db();
-$table =  crud($database);
+$table = new crud($database);
 
 
 ?>
@@ -35,17 +35,20 @@ $table =  crud($database);
 
         <tbody>
           <?php  
-          $data = $table->getAll()->fetch();
+          $data = $table->getAll();
           foreach($data as $d){
 
           ?>
  <tr>
-                <td ><?=htmlspecialchars($id, ENT_QUOTES, 'UTF-8')?></td>
-                <td><?=htmlspecialchars($name, ENT_QUOTES, 'UTF-8')?></td>
-                <td><?=htmlspecialchars($age, ENT_QUOTES, 'UTF-8')?></td>
+                <td ><?=$d['id']?></td>
+                <td ><?=$d['age']?></td>
+                <td ><?=$d['name']?></td>
+                <td ><?=$d['image']?></td>
+                <td ><?=$d['password']?></td>
+             
                 <td>
-                    <button class="btn edit"  id="edit"><a href="edit.php?id=<?php $d['id'] ?>">Edit</a></button>
-                    <button class="btn edit"  id="delete"><a href="delete.php?id=<?php $d['id'] ?>">Delete</a></button>
+                    <button class="btn edit"  id="edit"><a href="edit.php?id=<?= $d['id'] ?>">Edit</a></button>
+                    <button class="btn edit"  id="delete"><a href="delete.php?id=<?= $d['id'] ?>">Delete</a></button>
                 </td>
             </tr>
           <?php } ?>
