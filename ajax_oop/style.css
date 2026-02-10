@@ -87,3 +87,9 @@ table th {
     height: 35px;
     text-align: center;
 }
+.password{
+      max-width: 200px;     /* VERY important */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

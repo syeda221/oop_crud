@@ -7,15 +7,18 @@ if(isset($_POST['add']))
 {
     $name = $_POST['name'];
     $age = $_POST['age'];
-    $image = $_POST['image']['name'];
-    $tmp = $_POST['image']['tmp_name'] ;
-    move_uploaded_file($tmp , "/pics/".$image);
+    $image =$_FILES['image']['name'];
+    $tmp = $_FILES['image']['tmp_name'] ;
+    move_uploaded_file($tmp , "pics/".$image);
     $password = $_POST['password'];
-    $table->insert($name,$age,$image,$password);
+    if($table->insert($name,$age,$image,$password)){
+        echo "<script>alert('added data')</script>";
+    };
 }
+
 ?>
 
-<form class="add-form" style="opacity:1;" id="insert-data" method="post">
+<form class="add-form" style="opacity:1;" id="insert-data" method="post" enctype="multipart/form-data">
         <h5>Add Data</h5>
         <input type="text" name="name" id="name"><br><br>
         <input type="number" name="age" id="age"><br><br>

@@ -12,7 +12,7 @@ class crud{
     public function insert($name,$age,$image,$password){
         $password = password_hash($password ,PASSWORD_DEFAULT);
         $ins  = $this->db->prepare("INSERT INTO users (`name`,`age`,`image`, `password`) VALUES (?, ?,?,?)");
-        $ins->execute([$name,$age,$image,$passwords]);
+        $ins->execute([$name,$age,$image,$password]);
         return $ins->rowCount();
     }
     public function delete($id){

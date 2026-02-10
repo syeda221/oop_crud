@@ -43,8 +43,8 @@ $table = new crud($database);
                 <td ><?=$d['id']?></td>
                 <td ><?=$d['age']?></td>
                 <td ><?=$d['name']?></td>
-                <td ><?=$d['image']?></td>
-                <td ><?=$d['password']?></td>
+                <td ><img src="pics/<?=$d['image']?>" style="width:100px;hieght:100px" alt=""></td>
+                <td class="password" ><?=$d['password']?></td>
              
                 <td>
                     <button class="btn edit"  id="edit"><a href="edit.php?id=<?= $d['id'] ?>">Edit</a></button>
